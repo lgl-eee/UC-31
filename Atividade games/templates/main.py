@@ -13,9 +13,9 @@ def inscricao():
         email = request.form.get('email')
 
         if not nome or not jogo or not email:
-            mensagem = "Todos os campos são obrigatórios."
+            mensagem = "Preencha todos os campos obrigatórios."
         else:
-            mensagem = f"Usuário {nome} inscrito com sucesso no jogo {jogo}."
+            "mensagem = Inscrição realizada com sucesso!"
 
     return render_template('inscricao.html', mensagem=mensagem)
 
