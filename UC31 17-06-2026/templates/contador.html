@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas</title>
+</head>
+<body>
+    <h1>Contador de Visitas</h1>
+    <p>Este site foi visitado {{ contador_visitas }} vezes.</p>
+    <form action="/contador" method="post">
+        <button type="submit" name="acao" value="zerar">Zerar contador</button>
+    </form>
+</body>
+</html>
