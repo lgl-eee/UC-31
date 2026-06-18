@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontuação</title>
+</head>
+<body> 
+    <style>    
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+    :root{
+        --bg1:#f5f7ff; --bg2:#eef2ff; --card:#ffffff;
+        --accent:#4f46e5; --accent-2:#7c3aed;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+             margin:0;padding:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+             background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#0f172a}
+    .container{width:min(640px,92%);background:var(--card);padding:32px;border-radius:12px;
+                         box-shadow:0 8px 30px rgba(2,6,23,0.08);text-align:center}
+    h1{margin:0 0 8px;font-size:1.25rem;font-weight:600}
+    .desc{margin:0 0 20px;color:#475569;font-size:0.95rem}
+    .buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{appearance:none;border:0;padding:12px 20px;border-radius:10px;font-weight:600;
+             cursor:pointer;color:#fff;transition:transform .12s,box-shadow .12s}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));
+                             box-shadow:0 8px 24px rgba(79,70,229,0.16)}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(79,70,229,0.20)}
+    .btn:focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:3px}
+    </style>
+<h1>Pontuação</h1>
+
+{% if placar is defined %}
+    {% set lista = placar %}
+{% elif scores is defined %}
+    {% set lista = scores %}
+{% else %}
+    {% set lista = [] %}
+{% endif %}
+
+{% if lista %}
+<table>
+    <thead>
+        <tr><th>Posição</th><th>Time</th><th>Pontos</th></tr>
+    </thead>
+    <tbody>
+        {% for item in lista %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ item.time if item.time is defined else item.name if item.name is defined else (item[0] if item[0] is defined else '') }}</td>
+            <td>{{ item.pontos if item.pontos is defined else item.points if item.points is defined else (item[1] if item[1] is defined else '') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Sem pontuação disponível.</p>
+{% endif %}
+<link rel="stylesheet" href="style.css">
+</body>
+</html>
