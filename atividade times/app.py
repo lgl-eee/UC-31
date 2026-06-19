@@ -11,7 +11,7 @@ def iniciar_placar():
 @app.route('/')
 def mostrar_placar():
     iniciar_placar()
-    return session['placar']
+    return render_template('mostrar_placar.html', placar=session['placar'])
 
 @app.route('/ponto/<time>')
 def adicionar_ponto(time):
@@ -19,12 +19,12 @@ def adicionar_ponto(time):
         return "Time inválido", 400
 
     session['placar'][time] += 1
-    return session['placar']
+    return render_template('adicionar_ponto.html', placar=session['placar'])
 
 @app.route('/zerar')
 def zerar_placar():
-    session['placar'] = {time: 0 for time in TIMES}
-    return session['placar']
+    session['placar'] = {time: 0 for time in TIMES} 
+    return render_template('zerar_placar.html', placar=session['placar'])
 
 if __name__ == '__main__':
     app.run(debug=True)
