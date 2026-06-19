@@ -6,9 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <button type="button" onclick="window.location.href='mostrar_placar.html'" aria-label="Ir para mostrar placar">
-        <span class="btn-content"></span>
-    </button>
 
-</body>
+
+    <div class="container">
+        <h1>Ponto adicionado</h1>
+        <p class="desc">Clique no botão abaixo para visualizar o placar.</p>
+        <div class="buttons">
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/'" aria-label="Ir para mostrar placar">
+                Mostrar placar
+            </button>
+        </div>
+    </div>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </html>
