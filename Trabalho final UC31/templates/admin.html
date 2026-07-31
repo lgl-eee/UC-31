@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Admin — TopEscolas{% endblock %}
+{% block content %}
+  <h1 class="h4 mb-3">Painel administrativo</h1>
+
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h2 class="h5">Total de escolas</h2>
+        <p class="display-6">{{ total_escolas }}</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h2 class="h5">Total de avaliações</h2>
+        <p class="display-6">{{ total_avaliacoes }}</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h2 class="h5">Top 5</h2>
+        <ol class="ps-3">
+          {% for e in top5 %}
+            <li><a href="{{ url_for('detalhes', id=e.id) }}">{{ e.nome }}</a> — {{ e.media }}</li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="h5">Operações rápidas</h2>
+    <p class="text-muted">Para apagar ou editar escolas, use a página de listagem.</p>
+  </section>
+{% endblock %}

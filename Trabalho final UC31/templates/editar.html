@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Editar {{ escola.nome }} — TopEscolas{% endblock %}
+{% block content %}
+  <h1 class="h4 mb-3">Editar escola</h1>
+  <form method="post" action="{{ url_for('editar', id=escola.id) }}">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome *</label>
+      <input id="nome" name="nome" class="form-control" type="text" required value="{{ escola.nome }}">
+    </div>
+    <div class="mb-3">
+      <label for="morada" class="form-label">Morada</label>
+      <input id="morada" name="morada" class="form-control" type="text" value="{{ escola.morada }}">
+    </div>
+    <div class="mb-3">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input id="cidade" name="cidade" class="form-control" type="text" value="{{ escola.cidade }}">
+    </div>
+    <div class="mb-3">
+      <label for="descricao" class="form-label">Descrição</label>
+      <textarea id="descricao" name="descricao" class="form-control" rows="3">{{ escola.descricao }}</textarea>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="vagas" class="form-label">Vagas</label>
+        <input id="vagas" name="vagas" class="form-control" type="number" min="0" value="{{ escola.vagas }}">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input id="telefone" name="telefone" class="form-control" type="text" value="{{ escola.telefone }}">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="site" class="form-label">Site</label>
+        <input id="site" name="site" class="form-control" type="url" value="{{ escola.site }}">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="foto" class="form-label">Caminho da foto (opcional)</label>
+      <input id="foto" name="foto" class="form-control" type="text" value="{{ escola.foto }}">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Guardar alterações</button>
+    <a class="btn btn-outline-secondary" href="{{ url_for('detalhes', id=escola.id) }}">Cancelar</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "nome": "Escola Secundária do Centro",
+    "morada": "Rua das Flores, 45",
+    "cidade": "Lisboa",
+    "descricao": "Campus moderno com laboratórios de informática, biblioteca e salas multimédia.",
+    "vagas": 300,
+    "telefone": "212345678",
+    "site": "https://enrico.aurudo",
+    "foto": "/static/img/Ana-Marina-Coutinho_SGCOM-UFRJ-3-1200x800-1.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Colégio das Artes",
+    "morada": "Avenida da Cultura, 120",
+    "cidade": "Porto",
+    "descricao": "Foco em artes e tecnologias, estúdios bem equipados e apoio ao aluno.",
+    "vagas": 180,
+    "telefone": "222987654",
+    "site": "https://alysson.com",
+    "foto": "/static/img/images.jpeg"
+  },
+  {
+    "id": 3,
+    "nome": "Escola Técnica Vale Verde",
+    "morada": "Largo do Mercado, 7",
+    "cidade": "Coimbra",
+    "descricao": "Formação técnica com parcerias industriais e estágios garantidos.",
+    "vagas": 240,
+    "telefone": "239112233",
+    "site": "https://www.adriano.com",
+    "foto": "/static/img/images (1).jpeg"
+  },
+  {
+    "id": 4,
+    "nome": "Colégio Nova Geração",
+    "morada": "Estrada Nacional 2, km 55",
+    "cidade": "Faro",
+    "descricao": "Ensino bilingue, ênfase em mobilidade internacional e projetos Erasmus.",
+    "vagas": 150,
+    "telefone": "289556677",
+    "site": "https://jpmendes.com",
+    "foto": "/static/img/images (2).jpeg"
+  },
+  {
+    "id": 5,
+    "nome": "Senac",
+    "morada": "Travessa Macaé, 2875",
+    "cidade": "Natal",
+    "descricao": "Educação profissional que transforma trajetórias e prepara jovens para o mundo do trabalho com responsabilidade social.",
+    "vagas": 250,
+    "telefone": "(84) 4005-1094",
+    "site": "https://www.kaiky.com.br",
+    "foto": "/static/img/CEP-ZonaNorte.jpg"
+  },
+  {
+    "id": 6,
+    "nome": "Escola Estadual Potengi do Saber",
+    "morada": "Av. das Palmeiras, 245 – Centro",
+    "cidade": "Natal",
+    "descricao": "Escola de ensino fundamental e médio com foco em projetos científicos e culturais.",
+    "vagas": 120,
+    "telefone": "(84) 3214-5831",
+    "site": "https://www.marcos.shuster",
+    "foto": "/static/img/images (3).jpeg"
+  },
+  {
+    "id": 7,
+    "nome": "Escola Estadual Dunas do Sol",
+    "morada": "Rua das Dunas, 87 – Nova Esperança",
+    "cidade": "Parnamirim",
+    "descricao": "Oferece ensino integral e atividades esportivas para os alunos.",
+    "vagas": 95,
+    "telefone": "(84) 3278-4419",
+    "site": "https://www.rn.enzochan/as",
+    "foto": "static/img/images (4).jpeg"
+  },
+  {
+    "id": 8,
+    "nome": "Escola Estadual Costa Branca",
+    "morada": "Av. Rio Branco, 1035 – Alto da Conceição",
+    "cidade": "Mossoró",
+    "descricao": "Instituição voltada ao desenvolvimento acadêmico e tecnológico.",
+    "vagas": 140,
+    "telefone": "(84) 3321-6078",
+    "site": "https://escola.unidade/aass",
+    "foto": "static/img/Sala_de_Aula_Notebooks.jpeg"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "escola_id": 1,
+    "autor": "Maria",
+    "estrela": 5,
+    "comentario": "Ótima infraestrutura e professores muito dedicados.",
+    "data": "2026-07-30"
+  },
+  {
+    "id": 2,
+    "escola_id": 1,
+    "autor": "João",
+    "estrela": 4,
+    "comentario": "Boa experiência geral; podia haver mais eventos extracurriculares.",
+    "data": "2026-07-28"
+  },
+  {
+    "id": 3,
+    "escola_id": 2,
+    "autor": "Anónimo",
+    "estrela": 5,
+    "comentario": "Ambiente criativo e muitos recursos para artistas.",
+    "data": "2026-07-29"
+  },
+  {
+    "id": 4,
+    "escola_id": 3,
+    "autor": "Rita",
+    "estrela": 3,
+    "comentario": "Formação técnica sólida, mas instalações desportivas precisam de melhoria.",
+    "data": "2026-07-27"
+  },
+  {
+    "id": 5,
+    "escola_id": 4,
+    "autor": "Carlos",
+    "estrela": 4,
+    "comentario": "Bom programa internacional; transporte pode ser um problema para quem vem de fora.",
+    "data": "2026-07-25"
+  },
+  {
+    "id": 6,
+    "escola_id": 5,
+    "autor": "Arnaldo",
+    "estrela": 5,
+    "comentario": "Muito bom Melhor escola de todas",
+    "data": "2026-07-31"
+  },
+  {
+    "id": 7,
+    "escola_id": 2,
+    "autor": "nãoooooooooo",
+    "estrela": 3,
+    "comentario": "gostei um pouco",
+    "data": "2026-07-31"
+  }
+]

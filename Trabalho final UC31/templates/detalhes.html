@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}{{ escola.nome }} — TopEscolas{% endblock %}
+{% block content %}
+  <article>
+    <header class="mb-3">
+      <h1 class="h3">{{ escola.nome }}</h1>
+      <p class="text-muted">{{ escola.cidade }} — {{ escola.morada }}</p>
+      <p>
+        <span class="star" aria-hidden="true">{% for i in range(1,6) %}{% if i <= (escola.media|round(0,'floor')) %}★{% else %}☆{% endif %}{% endfor %}</span>
+        <strong class="ms-2">{{ escola.media }}</strong>
+        <small class="text-muted"> — {{ escola.num_avaliacoes }} avaliações</small>
+      </p>
+    </header>
+
+    <section class="mb-4">
+      {% if escola.foto %}
+        <img src="{{ escola.foto }}" alt="Foto do campus de {{ escola.nome }}" class="img-fluid mb-3">
+      {% endif %}
+      <p>{{ escola.descricao }}</p>
+      <dl class="row">
+        <dt class="col-sm-3">Vagas</dt><dd class="col-sm-9">{{ escola.vagas }}</dd>
+        <dt class="col-sm-3">Telefone</dt><dd class="col-sm-9">{{ escola.telefone }}</dd>
+        <dt class="col-sm-3">Site</dt><dd class="col-sm-9">
+          {% if escola.site %}
+            <a href="{{ escola.site }}" target="_blank" rel="noopener">{{ escola.site }}</a>
+          {% else %}
+            —
+          {% endif %}
+        </dd>
+      </dl>
+      <p>
+        {% if session.get('is_admin') %}
+          <a class="btn btn-secondary" href="{{ url_for('editar', id=escola.id) }}">Editar escola</a>
+        {% endif %}
+        <a class="btn btn-outline-primary" href="{{ url_for('listar_escolas') }}">Voltar à lista</a>
+      </p>
+    </section>
+
+    <section class="mb-4" aria-labelledby="avaliacoes-title">
+      <h2 id="avaliacoes-title" class="h5">Avaliações</h2>
+      {% if avaliacoes %}
+        <ul class="list-group mb-3">
+          {% for a in avaliacoes %}
+            <li class="list-group-item">
+              <div class="d-flex w-100 justify-content-between">
+                <h3 class="h6 mb-1">{{ a.autor }}</h3>
+                <small class="text-muted">{{ a.data }}</small>
+              </div>
+              <p class="mb-1">
+                <span class="star" aria-hidden="true">{% for i in range(1,6) %}{% if i <= a.estrela %}★{% else %}☆{% endif %}{% endfor %}</span>
+                <span class="ms-2 text-muted">{{ a.estrela }} estrelas</span>
+              </p>
+              <p class="mb-0">{{ a.comentario }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Não há avaliações para esta escola.</p>
+      {% endif %}
+    </section>
+
+    <section aria-labelledby="avaliar-title">
+      <h2 id="avaliar-title" class="h5">Deixe a sua avaliação</h2>
+      <form method="post" action="{{ url_for('avaliar', escola_id=escola.id) }}">
+        <div class="mb-2">
+          <label for="autor" class="form-label">Nome</label>
+          <input id="autor" name="autor" class="form-control" type="text" placeholder="Seu nome (ou Anónimo)">
+        </div>
+        <div class="mb-2">
+          <label for="estrela" class="form-label">Estrelas</label>
+          <select id="estrela" name="estrela" class="form-select" required>
+            <option value="">Escolher</option>
+            <option value="5">5 — Excelente</option>
+            <option value="4">4 — Muito bom</option>
+            <option value="3">3 — Bom</option>
+            <option value="2">2 — Razoável</option>
+            <option value="1">1 — Fraco</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="comentario" class="form-label">Comentário</label>
+          <textarea id="comentario" name="comentario" class="form-control" rows="3" placeholder="Escreva a sua opinião (opcional)"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar avaliação</button>
+      </form>
+    </section>
+  </article>
+{% endblock %}
